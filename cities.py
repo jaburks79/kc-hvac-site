@@ -1,0 +1,28 @@
+CITIES = [
+    # Missouri side
+    {"name": "Kansas City",       "state": "MO", "zip": "64101", "county": "Jackson"},
+    {"name": "Lee's Summit",      "state": "MO", "zip": "64063", "county": "Jackson"},
+    {"name": "Independence",      "state": "MO", "zip": "64050", "county": "Jackson"},
+    {"name": "Blue Springs",      "state": "MO", "zip": "64014", "county": "Jackson"},
+    {"name": "Liberty",           "state": "MO", "zip": "64068", "county": "Clay"},
+    {"name": "Raytown",           "state": "MO", "zip": "64133", "county": "Jackson"},
+    {"name": "Grandview",         "state": "MO", "zip": "64030", "county": "Jackson"},
+    {"name": "Belton",            "state": "MO", "zip": "64012", "county": "Cass"},
+    {"name": "Raymore",           "state": "MO", "zip": "64083", "county": "Cass"},
+    {"name": "Gladstone",         "state": "MO", "zip": "64118", "county": "Clay"},
+    {"name": "Kearney",           "state": "MO", "zip": "64060", "county": "Clay"},
+    {"name": "Smithville",        "state": "MO", "zip": "64089", "county": "Clay"},
+    {"name": "Grain Valley",      "state": "MO", "zip": "64029", "county": "Jackson"},
+    {"name": "Oak Grove",         "state": "MO", "zip": "64075", "county": "Jackson"},
+    # Kansas side
+    {"name": "Overland Park",     "state": "KS", "zip": "66202", "county": "Johnson"},
+    {"name": "Olathe",            "state": "KS", "zip": "66061", "county": "Johnson"},
+    {"name": "Lenexa",            "state": "KS", "zip": "66215", "county": "Johnson"},
+    {"name": "Shawnee",           "state": "KS", "zip": "66203", "county": "Johnson"},
+    {"name": "Prairie Village",   "state": "KS", "zip": "66208", "county": "Johnson"},
+    {"name": "Merriam",           "state": "KS", "zip": "66202", "county": "Johnson"},
+    {"name": "Gardner",           "state": "KS", "zip": "66030", "county": "Johnson"},
+    {"name": "Leawood",           "state": "KS", "zip": "66206", "county": "Johnson"},
+    {"name": "Mission",           "state": "KS", "zip": "66202", "county": "Johnson"},
+    {"name": "Roeland Park",      "state": "KS", "zip": "66205", "county": "Johnson"},
+]
