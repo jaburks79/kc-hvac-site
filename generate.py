@@ -8,9 +8,9 @@ Usage:
 
 Output:
     output/
-        index.html          ← copy your main homepage here manually
+        index.html          <- copy your main homepage here manually
         service-areas/
-            index.html      ← auto-generated service areas hub page
+            index.html      <- auto-generated service areas hub page
         lees-summit-hvac/
             index.html
         blue-springs-hvac/
@@ -32,21 +32,21 @@ from jinja2 import Environment, FileSystemLoader
 from cities import CITIES
 
 
-# ── Config ────────────────────────────────────────────────────────────────────
+# -- Config --------------------------------------------------------------------
 
 OUTPUT_DIR = Path("output")
 TEMPLATE_DIR = Path("templates")
-PHONE = "(816) 555-0100"
+PHONE = "(816) 265-1137"
 SITE_URL = "https://www.kansascityhvacpros.com"
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# -- Helpers -------------------------------------------------------------------
 
 def make_slug(city_name: str, state: str) -> str:
-    """'Lee's Summit', 'MO' → 'lees-summit-hvac'"""
+    """'Lee's Summit', 'MO' -> 'lees-summit-hvac'"""
     name = city_name.lower()
-    name = re.sub(r"['\u2019]", "", name)   # remove apostrophes
-    name = re.sub(r"[^a-z0-9]+", "-", name) # non-alphanumeric → dash
+    name = re.sub(r"['\u2019]", "", name)
+    name = re.sub(r"[^a-z0-9]+", "-", name)
     name = name.strip("-")
     return f"{name}-hvac"
 
@@ -78,7 +78,7 @@ def build_service_areas_hub(all_cities: list, output_dir: Path) -> None:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HVAC Service Areas | KC HVAC Pros — Kansas City Metro</title>
+  <title>HVAC Service Areas | KC HVAC Pros -- Kansas City Metro</title>
   <meta name="description" content="KC HVAC Pros serves the entire Kansas City metro area including Missouri and Kansas suburbs. Find licensed HVAC contractors in your city." />
   <link rel="canonical" href="{SITE_URL}/service-areas/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +108,7 @@ def build_service_areas_hub(all_cities: list, output_dir: Path) -> None:
   <a href="/" class="logo">KC <span>HVAC</span> Pros</a>
 </header>
 <div class="hero">
-  <h1>HVAC Service Areas — Kansas City Metro</h1>
+  <h1>HVAC Service Areas -- Kansas City Metro</h1>
   <p>We connect homeowners across Missouri and Kansas with vetted local HVAC contractors. Find your city below.</p>
 </div>
 <div class="section">
@@ -118,20 +118,20 @@ def build_service_areas_hub(all_cities: list, output_dir: Path) -> None:
   </div>
 </div>
 <footer>
-  <p><strong>KC HVAC Pros</strong> &nbsp;·&nbsp; Serving the Kansas City Metro &nbsp;·&nbsp; <a href="tel:+18165550100">{PHONE}</a></p>
+  <p><strong>KC HVAC Pros</strong> &nbsp;·&nbsp; Serving the Kansas City Metro &nbsp;·&nbsp; <a href="tel:+18162651137">{PHONE}</a></p>
   <p style="margin-top:0.4rem">© 2025 KC HVAC Pros &nbsp;·&nbsp; <a href="/">Home</a></p>
 </footer>
 </body>
 </html>"""
 
     (hub_dir / "index.html").write_text(html, encoding="utf-8")
-    print(f"  ✓  service-areas/index.html")
+    print(f"  OK  service-areas/index.html")
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# -- Main ----------------------------------------------------------------------
 
 def main():
-    print(f"\n🏗  KC HVAC Pros — City Page Generator")
+    print(f"\nKC HVAC Pros -- City Page Generator")
     print(f"   Generating {len(CITIES)} city pages...\n")
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
@@ -172,11 +172,11 @@ def main():
         # Write file
         out_path = city_dir / "index.html"
         out_path.write_text(rendered, encoding="utf-8")
-        print(f"  ✓  {slug}/index.html  ({city}, {state})")
+        print(f"  OK  {slug}/index.html  ({city}, {state})")
 
-    print(f"\n✅  Done! {len(CITIES)} city pages + 1 hub page generated.")
+    print(f"\nDone! {len(CITIES)} city pages + 1 hub page generated.")
     print(f"   Output folder: {OUTPUT_DIR.resolve()}")
-    print(f"\n📋  Next steps:")
+    print(f"\nNext steps:")
     print(f"   1. Copy your homepage into output/index.html")
     print(f"   2. Sign up at formspree.io, get your form ID, replace YOUR_FORM_ID in city.html")
     print(f"   3. Push output/ to Cloudflare Pages or Netlify")
