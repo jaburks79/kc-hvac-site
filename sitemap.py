@@ -1,5 +1,5 @@
 """
-Sitemap Generator — run after generate.py
+Sitemap Generator -- run after generate.py
 Usage: python sitemap.py
 Output: output/sitemap.xml
 """
@@ -14,7 +14,7 @@ OUTPUT_DIR = Path("output")
 TODAY = date.today().isoformat()
 
 urls = [
-    ("", "1.0", "weekly"),           # homepage
+    ("", "1.0", "weekly"),
     ("service-areas/", "0.8", "monthly"),
 ]
 
@@ -40,5 +40,5 @@ xml_lines.append("</urlset>")
 OUTPUT_DIR.mkdir(exist_ok=True)
 sitemap_path = OUTPUT_DIR / "sitemap.xml"
 sitemap_path.write_text("\n".join(xml_lines), encoding="utf-8")
-print(f"✅  sitemap.xml generated with {len(urls)} URLs → {sitemap_path.resolve()}")
+print(f"OK  sitemap.xml generated with {len(urls)} URLs -> {sitemap_path.resolve()}")
 print(f"   Submit to: https://search.google.com/search-console")
